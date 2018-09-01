@@ -2,17 +2,14 @@
 
 ## 前言
 
-**第一次在掘金上面发文章,本人喜欢写一些文章,希望这一片文章可以给你一些帮助,更多文章以及项目请去看我的[github](https://github.com/vkcyan)**
-
 对于vue-cli的强大,使用过的人都知道,极大的帮助我们降低了vue的入门门槛
 
 最近在看webpack4，深感知识浅薄，这两天也一直在思考cli的配置，借助一些别人的实践，尝试自己搭建vue的项目，这里使用webpack4版本，之前我在网上查找别人的vue项目搭建,但是都是webpack3的,所以写了本文，如果有错误,或者有什么问题,请大佬们指出
 
 关于webpack的本文不会多说，请看[webpack文档](https://webpack.docschina.org/concepts/)
 
-关于本文的github地址[vue-MYCLI](https://github.com/vkcyan/vue-MYCLI)
-
-**你们的start是我发表的动力!!!!!**
+关于这个cli,我写了两个版本一个是基础搭建,最基础的.vue .js .css,在master分支
+还有一个版本,将会安装vue-router 以及vuex 以及less,我将他放在comprehensive分支
 
 ## 前置知识
 
@@ -71,7 +68,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, dist),
     filename: 'index.js'
-  } 
+  }
 }
 ```
 
@@ -222,7 +219,7 @@ npm install html-webpack-plugin -D
 
 ````JavaScript
 const path = require('path')
-const { VueLoaderPlugin } = require('vue-loader')   
+const { VueLoaderPlugin } = require('vue-loader')
 var HtmlWebpackPlugin = require('html-webpack-plugin');   //引入插件
 module.exports = {
   mode: 'production',   //暂时指定为生产环境
@@ -244,7 +241,7 @@ module.exports = {
 }
 ````
 
-`npm run  build`打包一下,dist文件夹下面会有两个文件 
+`npm run  build`打包一下,dist文件夹下面会有两个文件
 
 ![](http://on7r0tqgu.bkt.clouddn.com/Fn1OK7lN1Z1qOermZkVRWWLiwrt1.png )
 
@@ -286,7 +283,7 @@ const path = require('path')
 
 
 const config =  {
-  entry: path.resolve(__dirname, '../src/index.js'), 
+  entry: path.resolve(__dirname, '../src/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js'
@@ -508,7 +505,7 @@ npm install rimraf -D
 
 ## 分离打包css
 
-> 它会将所有的入口 chunk(entry chunks)中引用的 `*.css`，移动到独立分离的 CSS 文件 
+> 它会将所有的入口 chunk(entry chunks)中引用的 `*.css`，移动到独立分离的 CSS 文件
 
 ```bash
 npm install extract-text-webpack-plugin@next -D
@@ -555,8 +552,8 @@ module: {
 
 ```
 optimization: {
-    splitChunks: { 
-      chunks: "initial",         // 代码块类型 必须三选一： "initial"（初始化） | "all"(默认就是all) | "async"（动态加载） 
+    splitChunks: {
+      chunks: "initial",         // 代码块类型 必须三选一： "initial"（初始化） | "all"(默认就是all) | "async"（动态加载）
       minSize: 0,                // 最小尺寸，默认0
       minChunks: 1,              // 最小 chunk ，默认1
       maxAsyncRequests: 1,       // 最大异步请求数， 默认1
@@ -694,7 +691,6 @@ npm install babel-loader@7 babel-core babel-preset-env -D
 
 至此,基本的vue项目骨架的搭建完毕了,当然他没有vue-cli那么强大,或许最大的益处是让我们熟悉一个vue项目的大致webpack配置,当然我们可以一步一步的优化项目
 
-**可以走的慢,但是请不要停下来**
 
 
 
