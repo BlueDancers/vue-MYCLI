@@ -16,6 +16,13 @@ const config = merge(baseCinfig, {
           fallback: 'vue-style-loader',
           use: 'css-loader'
         })
+      },
+      {
+        test: /\.less$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'vue-style-loader',
+          use: ['css-loader', 'less-loader']
+        })
       }
     ]
   },

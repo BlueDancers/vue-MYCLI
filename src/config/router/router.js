@@ -1,6 +1,5 @@
 import Router from 'vue-router'
-import Vue from 'vue';
-
+import Vue from 'vue'
 import one from '../../component/one.vue'
 import two from '../../component/two.vue'
 import twos from '../../component/tows.vue'

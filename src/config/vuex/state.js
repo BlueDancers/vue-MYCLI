@@ -1,3 +1,3 @@
 export default {
-    count: 2
+  count: 20
 }

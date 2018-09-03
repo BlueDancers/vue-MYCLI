@@ -1,5 +1,5 @@
 import Vuex from 'vuex'
-import Vue from 'vue';
+import Vue from 'vue'
 
 import state from './state'
 import mutations from './mutations'
@@ -11,18 +11,18 @@ const store = new Vuex.Store({
   mutations
 })
 
-// if (module.hot) {
-//   module.hot.accept([
-//     './state',
-//     './mutations'
-//   ], () => {
-//     const newState = require('./state').default
-//     const newMutations = require('./mutations').default
-//     store.hotUpdate({
-//       state: newState,
-//       mutations: newMutations
-//     })
-//   })
-// }
+if (module.hot) {
+  module.hot.accept([
+    './state',
+    './mutations'
+  ], () => {
+    const newState = require('./state').default
+    const newMutations = require('./mutations').default
+    store.hotUpdate({
+      state: newState,
+      mutations: newMutations
+    })
+  })
+}
 
 export default store

@@ -30,7 +30,13 @@ module.exports = {
       {
         test: /\.js$/,
         use: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(vue|js)$/,
+        use: 'eslint-loader',
         exclude: /node_modules/,
+        enforce: 'pre'
       }
     ]
   },

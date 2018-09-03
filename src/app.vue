@@ -19,21 +19,25 @@
   export default {
     data () {
       return {
-        data: '我是Vue',
-        count: this.$store.state.count
+        data: '我是Vue'
+      }
+    },
+    computed: {
+      count () {
+        return this.$store.state.count
       }
     },
     methods: {
       addcount () {
         this.$store.commit('updateCount', 1)
-        this.count = this.$store.state.count
       }
     }
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 #app {
-  color: red;
+  font-size: 20px;
 }
 </style>
+
